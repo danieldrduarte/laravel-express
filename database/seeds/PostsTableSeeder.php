@@ -1,8 +1,9 @@
 <?php
 
+use App\Post;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class PostsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(PostsTableSeeder::class);
+        Post::truncate();
+
+        factory('App\Post',10)->create();
     }
 }
