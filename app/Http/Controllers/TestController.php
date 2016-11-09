@@ -6,13 +6,21 @@ use App\Http\Requests;
 
 class TestController extends Controller
 {
+    /**
+     * Action que retorna uma mensagem para o nome informado
+     * @param $nome nome da pessoa
+     * @return String
+     */
     public function index($nome)
     {
-        //return "Olá $nome";
-        //return view("test/index");
+        //return view("test/index", ["nome" => $nome]);
         return view("test.index", ["nome" => $nome]);
     }
 
+    /**
+     * Retorna uma lista fixa de anotações
+     * @return array
+     */
     public function notas()
     {
         $notas = [
@@ -23,6 +31,7 @@ class TestController extends Controller
             'Anotação 5'
         ];
 
+        //return view("test/notas", compact('notas'));
         return view("test.notas", compact('notas'));
     }
 }

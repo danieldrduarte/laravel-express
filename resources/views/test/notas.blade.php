@@ -4,7 +4,7 @@
 <!-- Adicionando o conteudo apenas na sessão 'title' do template -->
 @section('title')
     Notas
-@stop
+@endsection
 
 <!-- Adicionando o conteudo apenas na sessão 'content' do template -->
 @section('content')
@@ -21,4 +21,4 @@
             <li>{{ $nota }}</li>
         @endforeach
     </ul>
-@stop
+@endsection
