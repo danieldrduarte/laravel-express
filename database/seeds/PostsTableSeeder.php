@@ -13,6 +13,6 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         //Post::truncate();
-        factory('App\Post',100)->create();
+        factory('App\Post',10)->create();
     }
 }

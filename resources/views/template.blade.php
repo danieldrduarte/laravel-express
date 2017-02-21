@@ -38,9 +38,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('/blog') }}">Blog</a>
-                    <li><a href="{{ url('/notas') }}">Notas</a></li>
-                    <li><a href="{{ url('/ola/daniel') }}">Olá</a></li>
+                    <li><a href="{{ route('admin.posts.index') }}">Admin</a></li>
+                    <!--<li><a href=" url('/blog')">Blog</a>
+                    <li><a href="url('/notas')">Notas</a></li>
+                    <li><a href="url('/ola/daniel')">Olá</a></li> -->
                 </ul>
             </div>
         </div>

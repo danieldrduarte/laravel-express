@@ -29,4 +29,17 @@ class Post extends Model
     {
         return $this->belongsToMany('App\Tag', 'posts_tags');
     }
+
+    /**
+     * Criando um atributo dinâmico, no nome o "get" e o "Attribute" são obrigatórios no nome do método,
+     * nesse caso na view será chamado: $post->tagList OU $post->tag_list OU $post->TagList , etc
+     * @return mixed
+     */
+    public function getTagListAttribute()
+    {
+        $arTags  = $this->tags()->lists('name')->all();
+        $strTags = implode(',', $arTags);
+        return $strTags;
+
+    }
 }

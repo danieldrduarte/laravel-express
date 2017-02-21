@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h1>Create new Post</h1>
+    <h1>Edit Post</h1>
 
     @if($errors->any())
         <ul class="alert">
@@ -15,11 +15,11 @@
         </ul>
     @endif
 
-    {!! Form::open(['route'=>'admin.posts.store','method' => 'post']) !!}
+    {!! Form::model($post,['route'=>['admin.posts.update', $post->id],'method' => 'put']) !!}
         @include('admin.posts._form')
         <div class="form-group">
             {!! Form::label('tags','Tags:',['class' => 'control-label']) !!}
-            {!! Form::textarea('tags',null, ["class" => "form-control"]) !!}
+            {!! Form::textarea('tags',$post->tagList, ["class" => "form-control"]) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('Save Post',['class'=>'btn btn-primary']) !!}
