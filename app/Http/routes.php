@@ -30,8 +30,6 @@
 |
 */
 Route::group(['middleware' => ['web']], function () {
-
-
     Route::get('/auth/check',function () {
         if(Auth::check()){
             return "logado";
@@ -42,10 +40,17 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'PostsController@index');
 
-    Route::get('login', 'Auth\AuthController@getLogin');
-    Route::post('login', 'Auth\AuthController@postLogin');
-    Route::get('logout', 'Auth\AuthController@logout');
+//Criando rotas na mão
+//    Route::get('login', 'Auth\AuthController@getLogin');
+//    Route::post('login', 'Auth\AuthController@postLogin');
+//    Route::get('logout', 'Auth\AuthController@logout');
 
+    
+//Gerando as rotas da controller toda
+Route::controllers([
+    'auth'      => 'Auth\AuthController',
+    'password'  => 'Auth\PasswordController'
+]);
 
 
     Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
@@ -60,3 +65,8 @@ Route::group(['middleware' => ['web']], function () {
     });
 
 });
+
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
