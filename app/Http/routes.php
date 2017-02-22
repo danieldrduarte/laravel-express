@@ -40,18 +40,21 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'PostsController@index');
 
-//Criando rotas na mão
-//    Route::get('login', 'Auth\AuthController@getLogin');
-//    Route::post('login', 'Auth\AuthController@postLogin');
-//    Route::get('logout', 'Auth\AuthController@logout');
+    //Criando rotas na mão
+    //Route::get('auth/login', 'Auth\AuthController@getLogin');
+    //Route::post('auth/login', 'Auth\AuthController@postLogin');
+    //Route::get('auth/logout', 'Auth\AuthController@logout');
 
     
-//Gerando as rotas da controller toda
-Route::controllers([
-    'auth'      => 'Auth\AuthController',
-    'password'  => 'Auth\PasswordController'
-]);
+    //Gerando as rotas da controller toda ANTIGO
+    //Route::controllers([
+    //    'auth'      => 'Auth\AuthController',
+    //    'password'  => 'Auth\PasswordController'
+    //]);
 
+    //Gerando as rotas da controller toda NOVO
+    Route::auth();
+    Route::get('/home', 'HomeController@index');
 
     Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         Route::group(['prefix' => 'posts'], function(){
@@ -66,7 +69,3 @@ Route::controllers([
 
 });
 
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
