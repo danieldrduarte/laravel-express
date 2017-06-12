@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(Sabixao\User::class, function (Faker\Generator $faker) {
     return [
         'name'              => $faker->name,
         'email'             => $faker->safeEmail,
@@ -22,17 +22,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 /**
  * Definindo uma factory da classe Post, a partir dela podemos criar dados falsos para efetuar testes no sistema.
- * factory('App\Post',1)->make()    => Popula um objetos com as informações falsas
- * factory('App\Post',1)->create()  => Popula e persiste um objetos com as informações falsas
+ * factory('Sabixao\Post',1)->make()    => Popula um objetos com as informações falsas
+ * factory('Sabixao\Post',1)->create()  => Popula e persiste um objetos com as informações falsas
  */
-$factory->define(App\Post::class, function (Faker\Generator $faker) {
+$factory->define(Sabixao\Post::class, function (Faker\Generator $faker) {
     return [
         'title'     => $faker->sentence,
         'content'   => $faker->paragraph
     ];
 });
 
-$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+$factory->define(Sabixao\Tag::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
     ];

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sabixao\Http\Controllers;
 
-use App\Post;
+use Sabixao\Post;
 use Illuminate\Http\Request;
-use App\Http\Requests;
+use Sabixao\Http\Requests;
 
 class PostsController extends Controller
 {
     public function index()
     {
-//        $posts = \App\Post::all();
+//        $posts = \Sabixao\Post::all();
         $posts = Post::all();
         return view('posts.index', compact('posts'));
     }

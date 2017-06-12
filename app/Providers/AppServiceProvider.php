@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Sabixao\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

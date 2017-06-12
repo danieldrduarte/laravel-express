@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sabixao\Http\Controllers;
 
-use App\Http\Requests\PostRequest;
-use App\Post;
-use App\Tag;
+use Sabixao\Http\Requests\PostRequest;
+use Sabixao\Post;
+use Sabixao\Tag;
 
 class PostsAdminController extends Controller
 {

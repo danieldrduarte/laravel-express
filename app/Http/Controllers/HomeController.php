@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sabixao\Http\Controllers;
 
-use App\Http\Requests;
+use Sabixao\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Sabixao\Providers\AppServiceProvider::class,
+        Sabixao\Providers\AuthServiceProvider::class,
+        Sabixao\Providers\EventServiceProvider::class,
+        Sabixao\Providers\RouteServiceProvider::class,
 
         /*
          * meus providers

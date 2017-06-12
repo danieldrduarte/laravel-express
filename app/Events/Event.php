@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Sabixao\Events;
 
 abstract class Event
 {
